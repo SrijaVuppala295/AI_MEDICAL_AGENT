@@ -21,6 +21,7 @@ export async function verifyAdmin() {
       },
     });
 
+    console.log(`VerifyAdmin: Found user ${user?.email} with role ${user?.role}`);
     return user?.role === "ADMIN";
   } catch (error) {
     console.error("Failed to verify admin:", error);

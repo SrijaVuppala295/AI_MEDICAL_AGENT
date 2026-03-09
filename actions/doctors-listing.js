@@ -11,7 +11,7 @@ export async function getDoctorsBySpecialty(specialty) {
       where: {
         role: "DOCTOR",
         verificationStatus: "VERIFIED",
-        specialty: specialty.split("%20").join(" "),
+        specialty: decodeURIComponent(specialty),
       },
       orderBy: {
         name: "asc",

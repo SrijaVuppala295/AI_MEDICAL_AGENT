@@ -50,13 +50,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
+            <div className="relative h-[500px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/banner2.png"
                 alt="Doctor consultation"
                 fill
                 priority
-                className="object-cover md:pt-14 rounded-xl"
+                className="object-cover rounded-xl"
               />
             </div>
           </div>
@@ -119,11 +119,7 @@ export default function Home() {
 
           <div className="mx-auto">
             {/* Clerk Pricing Table */}
-            {/* Clerk Pricing Table - Requires billing to be enabled in Clerk Dashboard */}
-            {/* <Pricing /> */}
-            <div className="bg-muted-900/10 border border-emerald-900/20 rounded-lg p-8 text-center">
-              <p className="text-muted-foreground">Pricing table is currently disabled. Please enable billing in Clerk Dashboard to view.</p>
-            </div>
+            <Pricing />
 
             {/* Description */}
             <Card className="mt-12 bg-muted/20 border-emerald-900/30">

@@ -21,7 +21,7 @@ export default async function DoctorSpecialtyPage({ params }) {
   return (
     <div className="space-y-5">
       <PageHeader
-        title={specialty.split("%20").join(" ")}
+        title={decodeURIComponent(specialty)}
         backLink="/doctors"
         backLabel="All Specialties"
       />
