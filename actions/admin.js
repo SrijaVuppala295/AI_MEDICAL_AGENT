@@ -1,5 +1,6 @@
 "use server";
 
+import { cache } from "react";
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
@@ -7,7 +8,7 @@ import { revalidatePath } from "next/cache";
 /**
  * Verifies if current user has admin role
  */
-export async function verifyAdmin() {
+export const verifyAdmin = cache(async () => {
   const { userId } = await auth();
 
   if (!userId) {
@@ -21,13 +22,15 @@ export async function verifyAdmin() {
       },
     });
 
-    console.log(`VerifyAdmin: Found user ${user?.email} with role ${user?.role}`);
+    console.log(
+      `VerifyAdmin: Found user ${user?.email} with role ${user?.role}`
+    );
     return user?.role === "ADMIN";
   } catch (error) {
     console.error("Failed to verify admin:", error);
     return false;
   }
-}
+});
 
 /**
  * Gets all doctors with pending verification
