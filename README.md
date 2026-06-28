@@ -355,12 +355,6 @@ Make sure the `DATABASE_URL` is accessible from the deployment environment and a
 
 ---
 
-## 📄 License
 
-This project is private and maintained by **SaiSanjuSush**.
 
----
 
-## 👩‍💻 Authors
-
-Made with 💗 by **SaiSanjuSush**
